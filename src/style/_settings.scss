@@ -1,0 +1,51 @@
+//variables maps
+$colors: (
+	white: #fff,
+	black: #333333
+);
+
+$global-font-family: 'Roboto', serif;
+$global-font-size: 16px;
+$global-line-height: 1.7;
+$font-smooth: antialiased;
+
+// Media q breakpoints
+
+$b-small: 0;
+$b-medium: 48em;
+$b-large: 64em;
+$b-xlarge: 90em;
+$b-xxlarge: 100em;
+
+$b-small-only: 0 47.9375em;
+$b-medium-only: 48em 74, 9375em;
+$b-large-only: 75em 99, 9375em;
+
+//Typography
+
+$paragraph-lineheight: 1.7;
+$paragraph-margin-bottom: 1.5em;
+
+$header-font-family: 'Roboto', sans-serif;
+$header-font-weight: 400;
+$header-color: color(white);
+$header-lineheight: 1.4;
+
+$header-sizes: (
+        small: (
+                'h1': 24,
+                'h2': 20,
+                'h3': 19,
+                'h4': 18,
+                'h5': 17,
+                'h6': 16,
+        ),
+        medium: (
+                'h1': 48,
+                'h2': 40,
+                'h3': 31,
+                'h4': 25,
+                'h5': 20,
+                'h6': 16,
+        ),
+)

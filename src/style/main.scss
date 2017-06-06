@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather');
+
+@import "../../bower_components/normalize-scss/_normalize.scss";
+
+@import "../../bower_components/juice/dist/juice";
+
+@import "settings";
+
+@import "function";
+
+@import "susy";
+
+
+/* Extra small devices (phones, less than 768px) */
+
+
+body {
+	box-sizing: border-box;
+	line-height: $global-line-height;
+	background-color: color(white);
+	font-smooth: $font-smooth;
+	font-size: $global-font-size;
+	color: color(white);
+	text-align: center;
+}
+
+a {
+	color: color(white);
+	text-decoration: none;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+#wrapper {
+	@include container(auto);
+	width: 100vw;
+	height: 100vh;
+	background-image: url("/img/assets/375x665.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	position: relative;
+}
+
+#container {
+	@include centerer;
+	min-width: 400px;
+}
+
+.logo {
+	margin: 0 auto;
+	& img {
+		width: 60vw;
+		max-width: rem-calc(250px);
+	}
+}
+
+.main-nav {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+	& a {
+		text-decoration: underline;
+	}
+}
+
+.address {
+	margin-top: 2.5rem;
+}
+
+.social {
+	& li {
+		display: inline-block;
+		vertical-align: middle;
+		padding: 0 1rem; 
+		& .f-icon::before {
+			content: '';
+			display: inline-block;
+			width: rem-calc(36px);
+			height: rem-calc(36px);
+			background-image: url("/img/assets/f-icon.svg");
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+		& .i-icon::before {
+			content: '';
+			display: inline-block;
+			width: rem-calc(36px);
+			height: rem-calc(36px);
+			background-image: url("/img/assets/i-icon.svg");
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+}
+
+
+
+/* Small devices (tablets, 768px and up) */
+@include susy-breakpoint($b-medium) {
+	#wrapper {
+		background-image: url("/img/assets/768x1024.jpg");
+	}
+}
+
+/* Medium devices (desktops, 1024px and up) */
+@include susy-breakpoint($b-large) {
+	#wrapper {
+		background-image: url("/img/assets/1920x1080.jpg");
+	}
+}
+
+/* Large devices (large desktops, 1440px and up) */
+@include susy-breakpoint($b-xlarge) {
+	.logo {
+		& img {
+			max-width: rem-calc(290px);
+		}
+	}
+}
+
+
+
+
+
