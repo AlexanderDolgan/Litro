@@ -17,10 +17,10 @@
 body {
 	box-sizing: border-box;
 	line-height: $global-line-height;
-	background-color: color(white);
+	background-color: color(gray);
 	font-smooth: $font-smooth;
 	font-size: $global-font-size;
-	color: color(white);
+	color: color(gray);
 	text-align: center;
 }
 
@@ -37,8 +37,10 @@ ul {
 
 #wrapper {
 	@include container(auto);
-	width: 100vw;
-	height: 100vh;
+	min-width: 100vw;
+	min-height: 100vh;
+	padding-top: 8rem;
+	padding-bottom: 2rem;
 	background-image: url("/img/assets/375x665.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -46,8 +48,8 @@ ul {
 	position: relative;
 }
 
-#container {
-	@include centerer;
+.container {
+	@include container();
 	min-width: 400px;
 }
 
@@ -60,11 +62,24 @@ ul {
 }
 
 .main-nav {
-	font-size: 1.5rem;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 1.2rem;
 	margin-top: 1.5rem;
 	& a {
 		text-decoration: underline;
 	}
+}
+
+.about {
+	display: none;
+	margin: 0 auto;
+	margin-top: 2rem;
+	padding: 4rem;
+	max-width: 800px;
+	background-color: rgba(0,0,0,.9);
+	text-align: left;
+	font-size: 0.8rem;
 }
 
 .address {
@@ -97,24 +112,43 @@ ul {
 	}
 }
 
-
-
 /* Small devices (tablets, 768px and up) */
 @include susy-breakpoint($b-medium) {
+
 	#wrapper {
 		background-image: url("/img/assets/768x1024.jpg");
+	}
+
+	.main-nav {
+		margin-top: 3rem;
+		text-align: center;
+		& li {
+			display: inline-block;
+			margin: 0 1.2rem;
+		}
+	}
+
+	.address {
+		margin-top: 3rem;
 	}
 }
 
 /* Medium devices (desktops, 1024px and up) */
 @include susy-breakpoint($b-large) {
+
 	#wrapper {
 		background-image: url("/img/assets/1920x1080.jpg");
+	}
+
+	.main-nav {
+		display: block;
+		// max-width: rem-calc(500px);
 	}
 }
 
 /* Large devices (large desktops, 1440px and up) */
 @include susy-breakpoint($b-xlarge) {
+
 	.logo {
 		& img {
 			max-width: rem-calc(290px);
@@ -123,6 +157,55 @@ ul {
 }
 
 
+/**/
 
+.gallery {
+	@include container();
+	margin-top: 2rem;
+}
+
+#imageGallery {
+	display: block;
+}
+
+#imageGallery li {
+	display: inline-block;
+	padding: .3em;
+	background:white;
+	margin: .1em;
+}
+
+#imageGallery li a {
+	display: block;
+	height: rem-calc(200px);
+	overflow: hidden;
+}
+
+#imageGallery li img {
+	display: block;
+}
+
+#overlay {
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  top:0;
+  left:0;
+  display:none;
+  text-align:center;
+}
+
+#overlay img {
+ @include centerer;
+ max-width: 100%;
+ max-height: 80%;
+ border: solid .3rem white
+}
+
+#overlay p {
+ color:white;
+ font-size: 1rem;
+}
 
 

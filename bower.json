@@ -17,7 +17,7 @@
     "test",
     "tests"
   ],
-    "devDependencies": {
+  "devDependencies": {
     "jquery": "^3.2.1",
     "normalize-strings": "normalize#^1.1.0",
     "juice": "^1.0.1",
@@ -25,5 +25,8 @@
     "susy": "^2.2.12",
     "normalize-css": "^7.0.0",
     "normalize-scss": "^3.0.3"
+  },
+  "dependencies": {
+    "photoswipe": "^4.1.2"
   }
 }
